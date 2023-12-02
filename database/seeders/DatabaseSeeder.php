@@ -28,16 +28,18 @@ class DatabaseSeeder extends Seeder
             if ($i % 2 != 0) {
                 \App\Models\Note::insert([
                     'user_id' => User::find(1)->id,
-                    'title' => $faker->word(),
-                    'content' => $faker->paragraph(),
-                    'created_at' => now()
+                    'title' => $faker->words(3, true),
+                    'content' => $faker->paragraph(4, false),
+                    'created_at' => now(),
+                    'updated_at' => now()
                 ]);
             } elseif ($i % 2 == 0) {
                 \App\Models\Note::insert([
                     'user_id' => User::find(2)->id,
-                    'title' => $faker->word(),
-                    'content' => $faker->paragraph(),
-                    'created_at' => now()
+                    'title' => $faker->words(3, true),
+                    'content' => $faker->paragraph(4, false),
+                    'created_at' => now(),
+                    'updated_at' => now()
                 ]);
             }
         }

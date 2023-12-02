@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Note;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;
 
 class NoteController extends Controller
@@ -30,7 +32,18 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Validator::make($request->all(), [
+            'title' => 'required',
+            'content' => 'required'
+        ])->validate();
+
+        Note::create([
+            'user_id' => $request->user()->id,
+            'title' => $request->title,
+            'content' => $request->content,
+        ]);
+
+        return redirect()->back()->with('message', 'New note has been posted!');
     }
 
     /**
@@ -54,7 +67,8 @@ class NoteController extends Controller
      */
     public function update(Request $request, Note $note)
     {
-        //
+        $note->update($request->all());
+        return redirect()->back()->with('message', 'Successfully updated!');
     }
 
     /**
