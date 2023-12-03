@@ -175,6 +175,7 @@ export default function ShowNoteModal({ className, noteData }) {
                                 <span>
                                     Try again, you haven't changed anything
                                 </span>
+
                             </div>
                         </div>
                     ) : null}
