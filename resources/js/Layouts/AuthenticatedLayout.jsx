@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import ApplicationLogo from "@/Components/ApplicationLogo";
 import Dropdown from "@/Components/Dropdown";
@@ -79,8 +78,7 @@ export default function Authenticated({ user, header, children }) {
                                             href={route("logout")}
                                             method="post"
                                             as="button"
-                                        >
-                                        </Dropdown.Link>
+                                        ></Dropdown.Link>
                                     </Dropdown.Content>
                                 </Dropdown>
                             </div>
@@ -139,13 +137,11 @@ export default function Authenticated({ user, header, children }) {
                         <ResponsiveNavLink
                             href={route("dashboard")}
                             active={route().current("dashboard")}
-                        >
-                        </ResponsiveNavLink>
+                        ></ResponsiveNavLink>
                     </div>
 
                     <div className="pt-4 pb-1 border-t border-gray-200">
                         <div className="px-4">
-
                             <div className="font-medium text-base text-gray-800">
                                 {user.name}
                             </div>
@@ -171,11 +167,10 @@ export default function Authenticated({ user, header, children }) {
             </nav>
 
             {header && (
-                <header className="bg-white shadow">
-                    <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <header className="bg-white shadow sticky top-0 z-50">
+                    <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
                         {header}
                     </div>
-
                 </header>
             )}
 

@@ -43,7 +43,7 @@ class NoteController extends Controller
             'content' => $request->content,
         ]);
 
-        return redirect()->back()->with('message', 'New note has been posted!');
+        return to_route('notes.index')->with('message', 'Successfully created!');
     }
 
     /**
@@ -68,7 +68,7 @@ class NoteController extends Controller
     public function update(Request $request, Note $note)
     {
         $note->update($request->all());
-        return redirect()->back()->with('message', 'Successfully updated!');
+        return to_route('notes.index')->with('message', 'Successfully updated!');
     }
 
     /**

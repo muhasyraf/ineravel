@@ -72,28 +72,6 @@ export default function ShowNoteModal({ className, noteData }) {
             });
         }
     };
-    // const renderNoteData = () => {
-    //     if (editMode === false) {
-    //         return (
-    //             <>
-    //                 {noteData.map((item) => (
-    //                     <div className="p-4 text-gray-900" key={item.id}>
-    //                         <h2 className="text-2xl">{item.title}</h2>
-    //                         <p className="text-sm">{item.user.name}</p>
-    //                         <p className="text-sm">{item.created_at}</p>
-    //                         <p className="text-base">{item.content}</p>
-    //                     </div>
-    //                 ))}
-    //             </>
-    //         );
-    //     } else {
-    //         return (
-    //             <>
-    //                 <p>MODE EDIT AKTIF</p>;
-    //             </>
-    //         );
-    //     }
-    // };
     const renderNoteData = () => {
         return (
             <>
@@ -175,7 +153,6 @@ export default function ShowNoteModal({ className, noteData }) {
                                 <span>
                                     Try again, you haven't changed anything
                                 </span>
-
                             </div>
                         </div>
                     ) : null}
